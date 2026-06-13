@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F4FF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bill Details ⚡"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#4A148C"
+            android:padding="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update or delete your saved electricity bill record."
+            android:textSize="15sp"
+            android:gravity="center"
+            android:textColor="#555555"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Month"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/spinnerDetailMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/etDetailUnit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter unit used: 1 - 1000 kWh"
+            android:inputType="number"
+            android:layout_marginTop="15dp"
+            android:padding="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Rebate Percentage"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="15dp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupDetailRebate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbDetail0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0%" />
+
+            <RadioButton
+                android:id="@+id/rbDetail1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1%" />
+
+            <RadioButton
+                android:id="@+id/rbDetail2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2%" />
+
+            <RadioButton
+                android:id="@+id/rbDetail3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3%" />
+
+            <RadioButton
+                android:id="@+id/rbDetail4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4%" />
+
+            <RadioButton
+                android:id="@+id/rbDetail5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5%" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tvDetailTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total Charges: RM 0.00"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#4A148C"
+            android:layout_marginTop="25dp" />
+
+        <TextView
+            android:id="@+id/tvDetailFinal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Final Cost: RM 0.00"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#00897B"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="UPDATE RECORD"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="#00897B"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DELETE RECORD"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+</ScrollView>
