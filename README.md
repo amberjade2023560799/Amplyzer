@@ -1,4 +1,4 @@
-# AMPlyzer ⚡
+# Amplyzer ⚡
 
 ICT602 Mobile Application Development Project
 
