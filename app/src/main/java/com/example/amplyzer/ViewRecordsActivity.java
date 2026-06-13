@@ -1,9 +1,11 @@
 package com.example.amplyzer;
 
+
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -14,6 +16,7 @@ import java.util.ArrayList;
 public class ViewRecordsActivity extends AppCompatActivity {
 
     ListView listViewRecords;
+    Button btnHome;
     DatabaseHelper myDb;
 
     ArrayList<String> recordList;
@@ -25,6 +28,7 @@ public class ViewRecordsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_records);
 
         listViewRecords = findViewById(R.id.listViewRecords);
+        btnHome = findViewById(R.id.btnHome);
         myDb = new DatabaseHelper(this);
 
         loadRecords();
@@ -33,6 +37,14 @@ public class ViewRecordsActivity extends AppCompatActivity {
             Intent intent = new Intent(ViewRecordsActivity.this, DetailActivity.class);
             intent.putExtra("ID", idList.get(position));
             startActivity(intent);
+        });
+
+
+
+        btnHome.setOnClickListener(v -> {
+            Intent intent = new Intent(ViewRecordsActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 

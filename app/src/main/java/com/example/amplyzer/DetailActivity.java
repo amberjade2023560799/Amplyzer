@@ -1,4 +1,6 @@
 package com.example.amplyzer;
+
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -10,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailActivity extends AppCompatActivity {
@@ -18,7 +21,7 @@ public class DetailActivity extends AppCompatActivity {
     EditText etDetailUnit;
     RadioGroup radioGroupDetailRebate;
     TextView tvDetailTotal, tvDetailFinal;
-    Button btnUpdate, btnDelete;
+    Button btnUpdate, btnDelete, btnBackToList;
 
     DatabaseHelper myDb;
     String recordId;
@@ -42,6 +45,7 @@ public class DetailActivity extends AppCompatActivity {
         tvDetailFinal = findViewById(R.id.tvDetailFinal);
         btnUpdate = findViewById(R.id.btnUpdate);
         btnDelete = findViewById(R.id.btnDelete);
+        btnBackToList = findViewById(R.id.btnBackToList);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
@@ -57,7 +61,7 @@ public class DetailActivity extends AppCompatActivity {
         btnUpdate.setOnClickListener(v -> updateRecord());
 
         btnDelete.setOnClickListener(v -> {
-            new androidx.appcompat.app.AlertDialog.Builder(this)
+            new AlertDialog.Builder(this)
                     .setTitle("Delete Record")
                     .setMessage("Are you sure you want to delete this bill record?")
                     .setPositiveButton("Delete", (dialog, which) -> {
@@ -72,6 +76,12 @@ public class DetailActivity extends AppCompatActivity {
                     })
                     .setNegativeButton("Cancel", null)
                     .show();
+        });
+
+        btnBackToList.setOnClickListener(v -> {
+            Intent intent = new Intent(DetailActivity.this, ViewRecordsActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 
